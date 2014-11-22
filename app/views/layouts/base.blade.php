@@ -25,9 +25,23 @@
 			      <span class="icon-bar"></span>
 			      <span class="icon-bar"></span>
 			    </button>
-			    <a class="navbar-brand" href="#"><img class='pull-left' src="{{ asset('images/MyTask-OpenBook-Icon72.png') }}" alt=' My Task'/>My Task </a>
+			     @if(Auth::check())
+			    	<a class="navbar-brand" href="{{ route('dash') }}"><img class='pull-left' src="{{ asset('images/MyTask-OpenBook-Icon72.png') }}" alt=' My Task'/>My Task </a>
+			  	@else
+			 		<a class="navbar-brand" href="{{ route('home') }}"><img class='pull-left' src="{{ asset('images/MyTask-OpenBook-Icon72.png') }}" alt=' My Task'/>My Task </a>	 	
+			  	@endif
 			  </div>
 			  <div class="navbar-collapse collapse navbar-responsive-collapse">
+			    @if(Auth::check())
+			    <ul class="nav navbar-nav">
+
+			      <li><a href="#" >New Task</a></li>
+			      
+
+
+			    </ul>
+
+			    @else
 			    <ul class="nav navbar-nav">
 
 			      <li><a href="#" data-toggle="modal" data-target="#Singnin_Window">Sign in</a></li>
@@ -35,10 +49,31 @@
 
 
 			    </ul>
-			    <ul class="nav navbar-nav navbar-right">
+			    @endif
+
+			    @if(Auth::check())
+				 <div class="navbar-right">
+				  <div class="btn-group"  id="btn-LogUser">
+					  
+					  <a href="#" class="btn btn-success">{{ Auth::user()->name }}</a>
+					  <a aria-expanded="false" href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+					    <li><a href="#">Edit User</a></li>
+					    <li><a href="#">Delete User</a></li>
+					   
+					    <li class="divider"></li>
+					    <li><a href="{{ route('logout') }}">Log out</a></li>
+					  </ul>
+					
+					</div>
+				</div>
+			  @else
+			  	<ul class="nav navbar-nav navbar-right">
 			      <a href="#" id="btn-primary" class="btn btn-primary" data-toggle="modal" data-target="#LoginWindow">Login</a>
 			    </ul>
+			   @endif
 			  </div>
+			 
 
 		</div>
 		<div class="container">

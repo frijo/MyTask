@@ -27,7 +27,7 @@ class UserController extends \BaseController {
   
 	    if (Auth::attempt($user)) {
 
-				return Redirect::route('home')
+				return Redirect::route('dash')
 		         ->with('flash_success', 'Welcome '.Auth::user()->name);
 	    }
 
