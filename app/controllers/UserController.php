@@ -54,76 +54,59 @@ class UserController extends \BaseController {
 			'name'    => 'required|min:5',
 			'password' =>'required|min:5|Confirmed',
 			'password_confirmation' =>'Required|min:5'
-
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
 		
 		if ($validator->passes()) {
+			$userdata = array(
+		  	'email' => Input::get('email'),
+		  	'password' => Input::get('password')
+			);
 			$user = new User();
 			$user->email = Input::get('email');
 			$user->name = Input::get('name');
 			$user->password = Hash::make(Input::get('password'));
 			
 			$user->save();
+			
+			if (Auth::attempt($userdata)) {
 
-			return Redirect::route('home')
-				->with('flash_success', 'The User '.$user->name.' '.'was successfully create.');
+				return Redirect::route('dash')
+		         ->with('flash_success', 'Welcome '.Auth::user()->name);
+	    	}
 		}
 		else
 		{
 			//Se retornar los errores de validacion al formulario
-			return Redirect::to('signin')
+			return Redirect::to('home')
 				->withErrors($validator, 'signin');
 		}
 	}
 
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+
 	public function show($id)
 	{
-		//
+		
 	}
 
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function edit($id)
 	{
-		//
+		
 	}
 
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function update($id)
 	{
-		//
+		
 	}
 
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function destroy($id)
 	{
-		//
+		
 	}
 
 

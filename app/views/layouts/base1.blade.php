@@ -18,6 +18,18 @@
 		@show
 	</head>
 
+	<style type="text/css"> 
+      body{ 
+      background-image: url('http://www.hdwallpapersonly.com/wp-content/uploads/2013/02/Full-Hd-Wallpapers-1080p-4.jpg'); 
+        no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+          } 
+
+    </style>
+
 	<body>
 		<div class="navbar navbar-default">
 			  <div class="navbar-header">

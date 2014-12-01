@@ -1,0 +1,12 @@
+ #dash{
+background-image: url('images/task.jp');
+no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+} 
+
+.contact-form {
+    margin-top:70px;
+}

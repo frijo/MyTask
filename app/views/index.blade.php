@@ -25,7 +25,7 @@
               <div class="row">
                   <div class="col-xs-6">
                       <div class="well">
-                            {{ Form::open(array('url' => '/login', 'role'=>'form')) }}
+                            {{ Form::open(array('url' => 'login', 'role'=>'form')) }}
                               <div class="form-group">
                                   {{ Form::label('email', 'Email',array('class' => 'control-label')) }}
                                   {{ Form::text('email', Input::old('email'),array('name'=> 'Login_email','id'=> 'Login_email','class'=> 'form-control','title'=>'Please enter you email', 'placeholder'=>'example@gmail.com'))}}
@@ -70,7 +70,7 @@
               <div class="row">
                   <div class="col-xs-6">
                       <div class="well">
-                              {{ Form::open(array('url' => '/signin', 'role'=>'form')) }}
+                              {{ Form::open(array('url' => 'signin', 'role'=>'form')) }}
                               <div class="form-group">
                                  <h2>New User</h2>
                               </div>
