@@ -68,6 +68,13 @@
                 <button type="submit" class="btn btn-primary btn-lg">Save</button>
               </div>
             </div>
+
+            <div class="form-group" action="tasks">
+              <div class="col-md-12 text-right">
+                <button  class="btn btn-primary btn-lg">Cancel</button>
+              </div>
+            </div>
+            
           </fieldset>
           </form>
         </div>
