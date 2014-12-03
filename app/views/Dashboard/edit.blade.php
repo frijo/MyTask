@@ -30,22 +30,23 @@
 	<div id="row1" class="row">
       <div id="class1" class="col-md-6 col-md-offset-3">
         <div id="well" class="well well-sm">
-          <form id="form" class="form-horizontal" action="tasks" method="post">
+          <form id="form" class="form-horizontal" action="update" method="post">
           <fieldset id="field">
-            <legend class="text-center">New Task</legend>
+            <legend class="text-center">Edit Task</legend>
     
             <!-- Title-->
             <div class="form-group">
               <label class="col-md-3 control-label" for="title">Title</label>
               <div class="col-md-9">
-                <input id="title" name="title" type="text" placeholder="Title" class="form-control">
+                <input id="title" value='<?php echo $task->title; ?>' name="title" type="text" placeholder="Title" class="form-control">
               </div>
             </div>
 
             <div class="form-group">
               <label class="col-md-3 control-label" for="priority">Priority</label>
               <div class="col-md-9">
-                    <select id="priority" name= "priority" class="balck">
+                    <select id="priority" name= "priority" class="balck" >
+                    <option><?php echo $task->priority; ?></option>
                     <option>High</option>
                     <option>Medium </option>
                     <option>Low</option>
@@ -57,23 +58,16 @@
              <div class="form-group">
               <label class="col-md-3 control-label" for="message">Description</label>
               <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message" placeholder="Write the description of the task" rows="5"></textarea>
+                <textarea class="form-control" id="message" name="message" placeholder="Write the description of the task" rows="5"> <?php echo $task->description?></textarea>
               </div>
             </div>
     
             <!-- Form actions -->
             <div class="form-group">
-              <div class="col-md-12 text-right">
+              <div class="col-sm-12 text-right">
                 <button type="submit" class="btn btn-primary btn-lg">Save</button>
               </div>
             </div>
-
-            <div class="form-group" action="tasks">
-              <div class="col-md-12 text-right">
-                <button  class="btn btn-primary btn-lg">Cancel</button>
-              </div>
-            </div>
-            
           </fieldset>
           </form>
         </div>

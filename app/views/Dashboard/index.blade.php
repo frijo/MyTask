@@ -14,14 +14,14 @@
        	border-radius: 10%;
        	border: 2%;       	
        	float: left;
-       	margin-left: 5%;
-      	margin-right: 5%;
+       	margin-left: 7.5%;
+      	margin-right: 7.5%;
 
        }
 
       .task1{       	
       	color: white;
-      	width: 80%;
+      	width: 100%;
       	border-color: white;
       	border-radius: 10%;
        	border: 2%;
@@ -39,7 +39,6 @@
 					if ($row->estado == 1) {
 						echo"<div class='task1'>";
 						echo"<span class='name'>$row->title</span><br/>";
-						echo"<p>$row->description</p>";
 						echo"<form action='tasks/$row->id/edit' method='get' enctype='multipart/form-data'role='form'>";
 	                    echo"<button type='submit' class='btn btn-warning btn-xs' title='edit'>";
 	                    echo"<span class='glyphicon glyphicon-ban-circle'>Edit</span>";
@@ -63,7 +62,6 @@
 					if ($row->estado == 2) {
 						echo"<div class='task1'>";
 						echo"<span class='name'>$row->title</span><br/>";
-						echo"<p>$row->description</p>";
 						echo"<form action='tasks/$row->id/edit' method='get' enctype='multipart/form-data'role='form'>";
 	                    echo"<button type='submit' class='btn btn-warning btn-xs' title='edit'>";
 	                    echo"<span class='glyphicon glyphicon-ban-circle'>Edit</span>";
@@ -88,7 +86,6 @@
 					if ($row->estado == 3) {						
 						echo"<div class='task1'>";
 						echo"<span class='name'>$row->title</span><br/>";
-						echo"<p>$row->description</p>";
 						echo"<form action='tasks/$row->id/edit' method='get' enctype='multipart/form-data'role='form'>";
 	                    echo"<button type='submit' class='btn btn-warning btn-xs' title='edit'>";
 	                    echo"<span class='glyphicon glyphicon-ban-circle'>Edit</span>";
@@ -113,7 +110,6 @@
 					if ($row->estado == 4) {
 						echo"<div class='task1'>";
 						echo"<span class='name'>$row->title</span><br/>";
-						echo"<p>$row->description</p>";
 						echo"<form action='tasks/$row->id/edit' method='get' enctype='multipart/form-data'role='form'>";
 	                    echo"<button type='submit' class='btn btn-warning btn-xs' title='edit'>";
 	                    echo"<span class='glyphicon glyphicon-ban-circle'>Edit</span>";

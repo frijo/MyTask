@@ -17,7 +17,7 @@ class Task extends Eloquent implements UserInterface, RemindableInterface {
     {
     	$user = Auth::user()->id;
     	return DB::select("select  t.id, t.title, t.description, t.estado from task t, users u
-							where t.id_user = ? and  u.id= ?", array(1,1));
+							where t.id_user = ? and  u.id= ?", array($user,$user));
     }
 
 }
